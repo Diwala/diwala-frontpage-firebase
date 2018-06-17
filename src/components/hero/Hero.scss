@@ -1,5 +1,46 @@
 @import "../../core/styles/utilities";
 
+// .AnimatedToken {
+//   overflow: hidden;
+// }
+
+// .AnimatedToken__svg {
+//   max-width: 458px;
+//     font-size: 36px;
+//     margin: 0;
+//     position: absolute;
+//     z-index: 1;
+// }
+
+// .AnimatedToken__path {
+//   fill: rgba(0,0,0,0);
+// }
+
+.AnimatedTokenInverted__svg {
+  animation: background-spin 4s infinite linear;
+  background-image: url("../../../graphics/Diwala Token_Wrapper copy.png");
+  background-position: 100% center;
+  background-repeat: repeat;
+  background-size: 200% 100%;
+  max-width: 458px;
+  overflow: hidden;
+  position: relative;
+  width: 60%;
+}
+
+@keyframes background-spin {
+	0% {
+    background-position: 100% center;
+  }
+	100% {
+    background-position: -100% center;
+  }
+}
+
+.AnimatedTokenInverted__path {
+  fill:white;
+}
+
 .website-hero {
   position: absolute;
   top: 0;
@@ -16,13 +57,14 @@
   }
   &__logo {
     align-items: center;
-    background-image: url("../../../graphics/Diwala_Token3.png");
+    /* background-image: url("../../../graphics/Diwala_Token3.png"); */
     &.purple{
       background-image: url("../../../graphics/Diwala_Token.png");
+      background-position: center center;
+      background-repeat: no-repeat;
+      background-size: contain;
     }
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-size: contain;
+    
     display: flex;
     height: 80vh;
     justify-content: center;
@@ -30,20 +72,40 @@
     text-align: center;
     vertical-align: center;
     width: 100%;
+    .AnimatedToken {
+      height: 100%;
+      margin: 0;
+      max-height: 500px;
+    }
     @include breakpoint(1200px){
       height: 60vh;
       margin-top: 20vh;
     }
     @include breakpoint(1000px) {
-      background-size: 500px auto;
       height: 100%;
       margin-top: 0;
+      &.purple {
+        background-size: 500px auto;
+      }
+      .AnimatedToken {
+        max-height: 500px;
+      }
     }
     @include breakpoint(700px){
-      background-size: 400px auto;
+      &.purple {
+        background-size: 400px auto;
+      }
+      .AnimatedToken {
+        max-height: 400px;
+      }
     }
     @include breakpoint('xs'){
-      background-size: 290px auto;
+      &.purple {
+        background-size: 290px auto;
+      }
+      .AnimatedToken {
+        max-height: 290px;
+      }
     }
   }
 
@@ -53,6 +115,8 @@
     max-width: 458px;
     font-size: 36px;
     margin: 0;
+    position: absolute;
+    z-index: 2;
     @include breakpoint(1200px) {
       font-size: 32px;
       max-width: 420px;
