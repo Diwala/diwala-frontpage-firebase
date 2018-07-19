@@ -1,16 +1,23 @@
 import * as React from 'react';
+import { urlFor } from '../../core/utilities/image-builder.functions';
 
 export default function NewsItem(props: any) {
 
+  const logoUrl = urlFor(props.news.logo).url();
+
   return (
-    <div className="newsitem">
-      <div className="newsitem__section">
-        <img className="newsitem__logo" src={props.logoUrl}/>
+  <li key={props.news.key} className="newsItem newsItem__list-item">
+      <div className="newsItem__section">
+        <a href={props.news.url} target="_blank">
+          <img className="newsItem__logo" src={logoUrl}/>
+        </a>
       </div>
-      <div className="newsitem__section">
-        <blockquote className="newsitem__quote">{props.quote}</blockquote>
+      <div className="newsItem__section">
+        <a href={props.news.url} target="_blank">
+          <blockquote className="newsItem__quote">{props.news.quote}</blockquote>
+        </a>
       </div>
-    </div>
+  </li>
   );
 
 }

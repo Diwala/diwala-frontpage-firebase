@@ -2,7 +2,7 @@ import sanityRequest from './sanity';
 
 export default async function (dispatch: any, action: any) {
   try {
-    const result = await sanityRequest(`*[_type == 'news']`);
+    const result = await sanityRequest(`*[_type == 'news-list']`);
     dispatch(action(result));
   } catch (error) {
     // tslint:disable-next-line

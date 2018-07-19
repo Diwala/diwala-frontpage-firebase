@@ -11,6 +11,7 @@ import { loadNews } from '../../actions/news';
 import getNews, { NewsData } from '../../api/news';
 
 import Partners from '../partners/Partners';
+import News from '../news/News';
 import Team from '../team/Team';
 
 import getPictures, { PictureData } from '../../api/pictures';
@@ -86,11 +87,11 @@ class MainBox extends React.Component {
               </Filter>
             </div>
           </Section>
-          {/* <Section name="news" parentClass={parentClass}>
+          <Section name="news" parentClass={parentClass}>
             <Filter if={this.props.news}>
-              <MediaSlider news={this.props.news}/>
+              <News news={this.props.news}/>
             </Filter>
-          </Section> */}
+          </Section>
           <Section name="team" parentClass={parentClass}>
             <Filter if={this.props.team}>
               <Team team={this.props.team}/>
