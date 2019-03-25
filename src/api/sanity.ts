@@ -14,6 +14,12 @@ export interface SanityBlogData {
   onClick: boolean;
 }
 
+export interface SanityPrivacyPolicy {
+  updated: string;
+  version: string;
+  body: any;
+}
+
 export interface SanityImageData {
   asset: {
     _ref: string;
