@@ -6,6 +6,7 @@ import pictures, { InitialPictureState } from './pictures';
 import texts, { InitialTextState } from './texts';
 import form, { InitialFormState } from './mailform';
 import blog, { InitialBlogState } from './blog';
+import policy, { InitialPolicyState } from './privacy-policy';
 
 export const diwalaFrontpageApp = combineReducers({
   news,
@@ -14,7 +15,8 @@ export const diwalaFrontpageApp = combineReducers({
   team,
   texts,
   form,
-  blog
+  blog,
+  policy
 });
 
 export const DiwalaState = {
@@ -24,5 +26,6 @@ export const DiwalaState = {
   team: InitialTeamState,
   texts: InitialTextState,
   form: InitialFormState,
-  blog: InitialBlogState
+  blog: InitialBlogState,
+  policy: InitialPolicyState
 };
