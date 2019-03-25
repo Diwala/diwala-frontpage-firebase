@@ -21,6 +21,7 @@ export default function LandingContent(props: {
     return createdObj;
   }
   renderDataObj = createRenderDataObj(filteredData);
+  console.log(renderDataObj);
 
   return (
     <div className="landing">
@@ -37,7 +38,7 @@ export default function LandingContent(props: {
               <p>{renderDataObj.description}</p>
             </div>
             <div className="join-now-btn-container">
-              <a className="join-now-btn" href="https://dev.cert.diwala.io/">
+              <a className="join-now-btn" href={renderDataObj.joinBtnLink}>
                 {renderDataObj.joinBtnTxt}
               </a>
             </div>

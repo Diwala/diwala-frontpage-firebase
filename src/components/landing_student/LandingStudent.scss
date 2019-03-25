@@ -2,7 +2,7 @@
   background-image: none !important;
 }
 
-.Footer__container.landing {
+.Footer__container.student {
   display: none;
 }
 
@@ -25,7 +25,7 @@
   transition: all 1s;
 }
 
-.landing-container {
+.landing-container-student {
   height: 100vh;
   // overflow: hidden;
   .landing-header-container {
@@ -50,6 +50,12 @@
       color: #39353D;
       font-family: 'Proxima Nova Regular';
     }
+    .app-store {
+      width: 135px;
+    }
+    .google-play {
+      width: 150px;
+    }
     .join-now-btn-container {
       display: flex;
       justify-content: center;
@@ -62,7 +68,8 @@
         letter-spacing: 0.59px;
         line-height: 52px;
         color: #46047C; 
-        font-family: 'Proxima Nova Bold'
+        font-family: 'Proxima Nova Bold';
+        cursor: pointer;
         // -webkit-box-shadow: 1px 4px 11px 0 rgba(92, 20, 160, 0.54);
         // box-shadow: 1px 4px 11px 0 rgba(92, 20, 160, 0.54);
       }
@@ -78,13 +85,17 @@
   }
 }
 
+.custom-button-group {
+  justify-content: space-around;
+}
+
 @media only screen and (min-width: 500px) {
   .token-bg {
     width: 100%;
     top: -30%;
     left: 60%;
   }
-  .landing-container {
+  .landing-container-student{
     max-width: calc(100vw - 6vw);
     .landing-secondary-container {
       .mobile {
@@ -116,7 +127,7 @@
     top: 20%;
     left: 15%;
   }
-  .landing-container {
+  .landing-container-student{
     .landing-secondary-container {
       .mobile {
         width: 100%;
@@ -144,7 +155,7 @@
     top: -30%;
     left: 60%;
   }
-  .landing-container {
+  .landing-container-student{
     max-width: calc(100vw - 8vw);
     .landing-secondary-container {
       .mobile {
@@ -171,7 +182,7 @@
     top: -65%;
     left: 50%;
   }
-  .landing-container {
+  .landing-container-student{
     .landing-secondary-container {
       .mobile {
         width: 60%;
@@ -190,6 +201,12 @@
       }
     }
   }
+  .custom-button-group {
+    justify-content: left;
+    .google-play-btn-container {
+      margin: 0 10px;
+    }
+  }
 }
 
 @media only screen and (min-width: 1024px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 2) {
@@ -198,7 +215,7 @@
     top: 20%;
     left: 15%;
   }
-  .landing-container {
+  .landing-container-student{
     .landing-secondary-container {
       .mobile {
         width: 100%;
@@ -233,7 +250,7 @@
     top: -50%;
     left: 50%;
   }
-  .landing-container {
+  .landing-container-student{
     max-width: calc(100vw - 10vw);
     .landing-header-container {
       .landing-header {

@@ -10,9 +10,11 @@ const Footer = function(props: any) {
     'https://www.instagram.com/diwala_/',
     'https://www.facebook.com/diwalaorg/',
   ];
+
+  const path = props.location.pathname.replace('/', '');
   
   return (
-      <div className="Footer__container">
+      <div className={`Footer__container ${path}`}>
         <footer className="Footer" id="footer">
           {props.children}
           <div className="Footer__bottom">
