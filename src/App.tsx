@@ -4,6 +4,7 @@ import Footer from './components/footer/Footer';
 import MainBox from './components/main_box/MainBox';
 import NoMatch from './components/no_match/NoMatch';
 import Blog from './components/blog/Blog';
+import PrivacyPolicy from './components/privacy_policy/PrivacyPolicy';
 import Certificates from './components/certificates/Certificates';
 import CuriousToLearnMore from './components/curious_to_learn_more/CuriousToLearnMore';
 import Menu from './components/menu/Menu';
@@ -33,6 +34,7 @@ const App = () => (
           <Route exact={true} path="/certificates" component={Certificates}/>
           <Route exact={true} path="/landing" component={Landing}/>
           <Route exact={true} path="/blog" component={Blog}/>
+          <Route exact={true} path="/privacy" component={PrivacyPolicy}/>
           <Route exact={true} path="/student" component={LandingStudent}/>
           <Route component={NoMatch}/>
         </Switch>
