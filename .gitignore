@@ -2,6 +2,7 @@
 
 # dependencies
 /node_modules
+/.firebase
 
 # testing
 /coverage
@@ -27,3 +28,4 @@ css
 
 # Firebase
 firebase-debug.log
+/.firebase

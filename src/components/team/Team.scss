@@ -7,34 +7,13 @@
 }
 
 .team__title {
-  &--core {
-    @include typography-title-h1;
-  }
-  &--others {
-    @include typography-title-h2;
-  }
+  @include typography-title-h2;
 }
 
 .team__title-container {
   @extend .logo-container;
-  &--core .team__title--others {
-    display: none;
-  }
   @include min-breakpoint(450px) {
     text-align: left;
-  }
-  @include min-breakpoint(getLogoContainerWidth(4)) {
-    &--core .team__title--core {
-      margin-bottom: 0;
-    }
-    &--core .team__title--others {
-      @include typography-title-h3;
-      display: inherit;
-      margin-top: 0;
-    }
-    &--others .team__title--others {
-      display: none;
-    }
   }
 }
 
@@ -48,78 +27,43 @@
   }
 }
 
-.team--core {
-  .team__person-image {
-    max-width: 200px;
-  }
-  .team__list {
-    margin: $base-space-size * 2 auto;
-  }
-  .team__person {
-    padding: $base-space-size;
-  }
-  @media (min-width: 450px) {
-    .team__person-image {
-      max-width: 100px;
-    }
-    .team__list {
-      display: flex;
-      justify-content: center;
-      max-width: 450px;
-    }
-  }
-  @media (min-width: 600px) {
-    .team__person-image {
-      max-width: 150px;
-    }
-    .team__list {
-      max-width: 600px;
-    }
-  }
-  @media (min-width: 750px) {
-    .team__person-image {
-      max-width: 200px;
-    }
-    .team__list {
-      max-width: 750px;
-    }
-  }
-}
-
-.team--others {
-  $item-height: 115px; // magic number - requested by Marina ^_^
-  $item-width: 150px;
+.team {
+  $item-height: 140px; // magic number - requested by Marina ^_^
+  $item-width: 140px;
+  margin-top: 208px;
   .team__title {
     @include typography-title-h4;
     height: $item-height;
-    width: 150px;
     text-align: left;
     font-size: 22px;
     @include min-breakpoint(700px) {
       width: 50%;
       font-size: 24px;
     }
+    &--team {
+      font-size: 48px;
+    }
   }
   .team__person-image {
-    max-width: 100px;
+    max-width: 120px;
   }
   .team__list {
     display: flex;
     flex-wrap: wrap;
     margin: $item-height * -1 auto 0;
     max-width: $item-width * 2;
-    padding: 0;
+    padding: 50px 0;
     .team__person {
       height: $item-height;
-      margin-left: $item-width;
+      margin-left: 0;
+      margin-right: $item-width;
       width: $item-width;
       &:nth-child(2n) {
-        margin-left: 0;
-        margin-right: $item-width;
+        margin-left: $item-width;
       }
     }
     .team__person-title {
-      min-height: 3em;
+      min-height: 1.8em;
     }
   }
   .social-icon {
@@ -134,7 +78,10 @@
     .team__list {
       margin: $base-space-size * 4 auto $item-height + $base-space-size * 4;
       max-width: $item-width * 3;
+      padding: 0;
       .team__person {
+        margin-left: $item-width;
+        margin-right: 0;
         &:nth-child(2n) {
           margin-left: $item-width;
           margin-right: 0;
@@ -192,20 +139,6 @@
 .team__list {
   list-style: none;
   padding-left: 0;
-}
-
-.team__list--others {
-  //display: grid;
-  .team__person {
-    //width: 50%;
-    &:first-child {
-      //margin-top: 100px;
-    }
-  }
-}
-
-.team__person {
-  //margin-bottom: $base-space-size * 2;
 }
 
 .team__person-name {

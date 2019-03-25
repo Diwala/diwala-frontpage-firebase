@@ -13,4 +13,5 @@ export const loadScript = (src: string, callback: Function): void => {
   js.onload = () => callback();
   console.log('LOADING SCRIPT', src);
   document.head.appendChild(js);
+  
 };
