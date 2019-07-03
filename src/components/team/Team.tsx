@@ -28,8 +28,7 @@ export default function Team(props: any) {
     return urls;
   };
 
-  const getTeam = (listOfTypes: string[]) => {
-    const choosenTeam = getTeamByType(listOfTypes);
+  const getTeam = (choosenTeam) => {
     if (choosenTeam.length > 0) {
       return choosenTeam.map((person: any, key: any) => {
         const url = person.image ? urlFor(person.image).url() : '';
@@ -49,36 +48,63 @@ export default function Team(props: any) {
     }
   };
 
-  const TeamTeam = getTeam(['core', 'tech-team', 'contributor']);
-  const TeamAmbassador = getTeam(['ambassador']);
-  const TeamMentor = getTeam(['mentor']);
+  const WorkingTeam = () => {
+    const choosenTeam = getTeamByType(['core', 'tech-team', 'contributor']);
+    if (choosenTeam.length > 0) {
+      return (
+        <div key="team-team" className="team">
+          <div className="team__title-container team__title-container">
+            <h3 className="team__title team__title--team">Team</h3>
+          </div>
+          <ul className="team__list team__list">
+            {getTeam(choosenTeam)}
+          </ul>
+        </div>
+      );
+    }
+    return (<></>);
+  };
+
+  const MentorTeam = () => {
+    const choosenTeam = getTeamByType(['mentor']);
+    if (choosenTeam.length > 0) {
+      return (
+        <div key="team-mentors" className="team">
+          <div className="team__title-container team__title-container">
+            <h3 className="team__title team__title--mentors">Mentors &amp; Advisors</h3>
+          </div>
+          <ul className="team__list team__list">
+            {getTeam(choosenTeam)}
+          </ul>
+        </div>
+      );
+    }
+    return (<></>);
+  };
+
+  const Ambassadors = () => {
+    const choosenTeam = getTeamByType(['ambassador']);
+    if (choosenTeam.length > 0) {
+      const TheAmbassadors = getTeam(choosenTeam);
+      return (
+        <div key="ambassador-comp" className="team">
+          <div className="team__title-container team__title-container">
+            <h3 className="team__title team__title--ambassadors">Ambassadors</h3>
+          </div>
+          <ul className="team__list team__list">
+            <TheAmbassadors key="the-ambassadors" />
+          </ul>
+        </div>
+      );
+    }
+    return (<></>);
+  };
 
   return (
     <>
-      <div key="team-team" className="team">
-        <div className="team__title-container team__title-container">
-          <h3 className="team__title team__title--team">Team</h3>
-        </div>
-        <ul className="team__list team__list">
-        {TeamTeam}
-        </ul>
-      </div>
-      <div key="team-ambassadors" className="team">
-        <div className="team__title-container team__title-container">
-          <h3 className="team__title team__title--ambassadors">Ambassadors</h3>
-        </div>
-        <ul className="team__list team__list">
-          {TeamAmbassador}
-        </ul>
-      </div>
-      <div key="team-mentors" className="team">
-        <div className="team__title-container team__title-container">
-          <h3 className="team__title team__title--mentors">Mentors &amp; Advisors</h3>
-        </div>
-        <ul className="team__list team__list">
-          {TeamMentor}
-        </ul>
-      </div>
+      <WorkingTeam />
+      <Ambassadors key="team-ambassadors" />
+      <MentorTeam />
     </>
   );
 }
