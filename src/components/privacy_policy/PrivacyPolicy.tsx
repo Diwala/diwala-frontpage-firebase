@@ -26,16 +26,17 @@ class PrivacyPolicy extends React.Component<PropsFromState, State> {
   }
 
   public render() {
-    // const props = this.props;
-    console.log(this.props);
     const blockContent = this.props.policy.length > 0 ? this.props.policy[0].body : [];
     return (
       <div className="privacy-policy">
-        <BlockContent
-          blocks={blockContent}
-          projectId={projectId}
-          dataset={dataset}
-        />
+        <h1 className="title">Privacy Policy</h1>
+        <div className="policy">
+          <BlockContent
+            blocks={blockContent}
+            projectId={projectId}
+            dataset={dataset}
+          />
+        </div>
       </div>
       );
   }
