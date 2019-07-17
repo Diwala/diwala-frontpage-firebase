@@ -32,7 +32,7 @@ class MainBox extends React.Component {
     partners: PartnerData[],
     pictures: PictureData[],
     team: any,
-    news: NewsData[]
+    news: NewsData[],
   };
 
   constructor(props: any) {

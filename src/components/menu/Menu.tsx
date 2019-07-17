@@ -28,14 +28,12 @@ class Menu extends React.Component {
   getMainMenu = () => {
     return (
       <>
-        <a href="/certificates">Certificates</a>
         <Scrollchor beforeAnimate={() => this.closeMenu()} to="#home" animate={{duration: this.animationSpeed}}>Home</Scrollchor>
         <Scrollchor beforeAnimate={() => this.closeMenu()} to="#benefits" animate={{duration: this.animationSpeed}}>Benefits</Scrollchor>
         <Scrollchor beforeAnimate={() => this.closeMenu()} to="#mission" animate={{ duration: this.animationSpeed}}>Our mission</Scrollchor>
         <Scrollchor beforeAnimate={() => this.closeMenu()} to="#partners" animate={{ duration: this.animationSpeed}}>Partners</Scrollchor>
         <Scrollchor beforeAnimate={() => this.closeMenu()} to="#support" animate={{ duration: this.animationSpeed}}>Support</Scrollchor>
         <Scrollchor beforeAnimate={() => this.closeMenu()} to="#team" animate={{ duration: this.animationSpeed}}>Team</Scrollchor>
-        <a href="https://medium.com/diwala" target="_blank">Blog</a>
         <Scrollchor beforeAnimate={() => this.closeMenu()} to="#footer" animate={{ duration: this.animationSpeed}}>Contact</Scrollchor>
       </>
     );
@@ -45,7 +43,6 @@ class Menu extends React.Component {
     return (
       <>
         <a href="/">Home</a>
-        <a href="https://medium.com/diwala" target="_blank">Blog</a>
       </>
     );
   }
@@ -54,7 +51,7 @@ class Menu extends React.Component {
     const getMenuPoints = (props: any) => {
       if (props.location.pathname === '/') {
         return this.getMainMenu();
-      } else if (props.location.pathname === '/certificates') {
+      } else if (props.location.pathname === '/certificates' || props.location.pathname === '/blog') {
         return this.getCertificateMenu();
       } else {
         return this.getMainMenu();

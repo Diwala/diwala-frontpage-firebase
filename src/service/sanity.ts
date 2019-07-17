@@ -1,9 +1,12 @@
 import SanityClient from '@sanity/client';
 
+export const projectId = 'jgfkj4nx';
+export const dataset = 'production';
+
 export const sanityClient = SanityClient({
   // Find your project ID and dataset in `sanity.json` in your studio project
-  projectId: 'jgfkj4nx',
-  dataset: 'production'
+  projectId: projectId,
+  dataset: dataset
 });
 
 export default async function (query: any) {

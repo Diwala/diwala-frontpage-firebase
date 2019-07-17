@@ -1,0 +1,47 @@
+.blog-link {
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  font-size: 0;
+}
+.blog-item {
+  display: inline-block;
+  position: relative;
+  height: 300px;
+  width: 400px;
+  margin: 0;
+  margin-bottom: -5px;
+  overflow: hidden;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.blog-item__text {
+  padding: 20px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 60%;
+  background: rgba(0, 0, 0, 0.7);
+}
+
+.blog-item__text * {
+  color: white;
+  transition: all 0.7s ease;
+  text-decoration: none;
+  margin: 10px 0;
+}
+
+.blog-item__text--title:hover, .blog-item__text--author:hover {
+  color: white;
+  filter: drop-shadow(0 0 3px rgba(255, 255, 255, 0.4));
+}
+
+.blog-item__text--title {
+  font-size: 24px;
+}
+
+.blog-item__text--author, .blog-item__text--date {
+  font-size: 20px;
+}
