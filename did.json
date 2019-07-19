@@ -1,0 +1,14 @@
+{
+  "@context": "https://w3id.org/did/v1",
+  "id": "did:https:diwala.io",
+  "publicKey": [{
+    "id": "did:https:diwala.io#owner",
+    "type": "Secp256k1VerificationKey2018",
+    "owner": "did:https:diwala.io",
+    "ethereumAddress": "0x8483386ffa7e01a56d21cfeb278c5e6959f6b9df"
+  }],
+  "authentication": [{
+    "type": "Secp256k1SignatureAuthentication2018",
+    "publicKey": "did:https:diwala.io#owner"
+  }]
+}

@@ -3,6 +3,9 @@
     "public": "build",
     "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
     "rewrites": [{
+      "source": "/.well-known/did.json",
+      "destination": "/did.json"
+    },{
       "source": "**",
       "destination": "/index.html"
     }],
